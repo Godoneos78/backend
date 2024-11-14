@@ -8,8 +8,11 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 CORS(app)
 
-# Configura tu clave de API de OpenAI
-openai.api_key = "tu_api_key_aqui"
+# Lee la clave de API desde la variable de entorno
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Resto de tu código en app.py ...
+
 
 
 # Función para guardar el prediagnóstico en la base de datos
